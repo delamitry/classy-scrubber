@@ -1,0 +1,3 @@
+# requirements.txt
+gradio
+spacy

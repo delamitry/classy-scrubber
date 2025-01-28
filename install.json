@@ -1,0 +1,16 @@
+{
+  "run": [{
+    "method": "shell.run",
+    "params": {
+      "venv": "env",
+      "message": [
+		"pip install -r requirements.txt", 
+		"python -m spacy download en_core_web_sm -q",
+		"python -m spacy download en_core_web_md -q",
+		"python -m spacy download en_core_web_lg -q",
+		"python -m spacy download en_core_web_trf -q",
+		"pip install --upgrade typing-extensions"
+	  ]
+    }
+  }]
+}
