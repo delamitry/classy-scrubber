@@ -15,13 +15,17 @@ logging.basicConfig(
 
 # -------------------- Entity Type Mapping --------------------
 # Mapping from friendly names to spaCy labels
+# CARDINAL, DATE, EVENT, FAC, GPE, LANGUAGE, LAW, LOC, MONEY, NORP, ORDINAL, ORG, PERCENT, PERSON, PRODUCT, QUANTITY, TIME, WORK_OF_ART
 friendly_to_label = {
     "Person": "PERSON",
     "Organization": "ORG",
     "Geopolitical Entity": "GPE",
     "Location": "LOC",
     "Date": "DATE",
+    "Time": "TIME",
     "Money": "MONEY",
+    "Percent": "PERCENT",
+    "Quantity": "QUANTITY",
     "Event": "EVENT",
     "Law": "LAW",
     "Language": "LANGUAGE",
@@ -29,6 +33,7 @@ friendly_to_label = {
     "Ordinal": "ORDINAL",
     "Facility": "FAC",
     "Product": "PRODUCT",
+    "Work of Art": "WORK_OF_ART",
     "NORP": "NORP",  # Nationalities or religious or political groups
 }
 
@@ -39,7 +44,10 @@ available_entity_types = [
     ("Geopolitical Entity", "GPE"),
     ("Location", "LOC"),
     ("Date", "DATE"),
+    ("Time", "TIME"),
     ("Money", "MONEY"),
+    ("Percent", "PERCENT"),
+    ("Quantity", "QUANTITY"),
     ("Event", "EVENT"),
     ("Law", "LAW"),
     ("Language", "LANGUAGE"),
@@ -47,6 +55,7 @@ available_entity_types = [
     ("Ordinal", "ORDINAL"),
     ("Facility", "FAC"),
     ("Product", "PRODUCT"),
+    ("Work of Art", "WORK_OF_ART"),
     ("NORP", "NORP"),
 ]
 
@@ -238,7 +247,7 @@ with gr.Blocks() as app:
         with gr.Column(scale=2):
             entity_type_selection = gr.CheckboxGroup(
                 choices=entity_type_choices,
-                value=["Person", "Organization", "Geopolitical Entity"],
+                value=["Person", "Organization", "Geopolitical Entity", "Time", "Work of Art", "Facility"],
                 label="🗂️ Select entity types to redact"
             )
     
