@@ -1,6 +1,6 @@
 module.exports = {
-  title: "Classy Caption",
-  description: "Caption private data with uncensored models",
+  title: "Classy Scrubber",
+  description: "Scrub private data with spaCy NLP library and pre-trained models",
   icon: "icon.png",
   menu: [{
     text: "Install",
@@ -9,5 +9,9 @@ module.exports = {
   {
     text: "Start",
     href: "start.json"
+  },
+  {
+    text: "Update",
+    href: "update.json"
   }]
 }
